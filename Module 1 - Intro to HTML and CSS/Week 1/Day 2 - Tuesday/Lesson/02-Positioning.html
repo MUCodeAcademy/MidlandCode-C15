@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Positioning</title>
+    <style>
+        /*
+
+        Different positions:
+
+        Static
+            - not positioned in any special way, follow the normal flow of the page
+            - not affected by top, bottom, left, and right properties
+        Relative 
+            - positioned relative to its normal position
+            - setting top, right, bottom, and left properties will adjust it away from its normal position
+        Sticky (Internet Explorer does not support this)
+                - positioned based on the user's scroll position
+                - toggles between relative and fixed, depending on scroll position
+                - positioned relative until a given offset position is met in the viewport, then it sticks in place
+        Fixed
+            - positioned relative to the viewport (it always stays in the same place even if the page is scrolled)
+        Absolute
+            - positioned relative to the nearest positioned ancestor
+                - a parent is an HTML element that is directly nesting an element; 
+                  an ancestor is a parent no matter how many levels up
+            
+                <body> <-- ancestor of div, ul, and li, parent of div
+                    <div> <-- ancestor of ul and li, parent of ul
+                        <ul> <-- ancestor of li, parent of li
+                            <li> <-- child of ul
+                            </li>
+                        </ul>
+                    </div>
+                </body>
+
+            - if no positioned ancestors exist, it uses the document body and moves along with the page scrolling
+        
+        */
+        div{
+            background-color: orange;
+            width: 400px;
+            height: 400px;
+        }
+        .static{
+            position: static;
+            margin-bottom: 600px;
+            background-color: blueviolet;
+        }
+        .relative{
+            position:relative;
+            margin-bottom: 350px;
+            background-color: aqua;
+        }
+        .absolute{
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            background-color: blue;
+        }
+        .fixed{
+            position: fixed;
+            width: 25%;
+            height: 50px;
+            background-color: red;
+        }
+        .parent{
+            top: 100px;
+            left: 50%;
+            margin-top: 100px;
+        }
+        .relative.child{
+            height: 300px;
+            width: 300px;
+            background-color: #FFFF00;
+            top: 50px;
+            left: 100px;
+        }
+    </style>
+</head>
+    <body>
+        <div class="relative parent">
+            Relative Parent
+            <div class="relative child">
+                Relative Child
+            </div>
+        </div>
+
+        <div class="absolute">Absolute</div>
+        <div class="fixed">Fixed</div>
+        <div class="static">Static</div>
+
+
+    </body>
+</html>
