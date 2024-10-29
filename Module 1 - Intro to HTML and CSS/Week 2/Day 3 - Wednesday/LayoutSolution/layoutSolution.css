@@ -1,0 +1,147 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(blue, orange);
+    background-size: cover; /* Ensures the background gradient covers the entire background regardless of page size */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    color: white;
+    font-size: 24px
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    height: 20vh;
+}
+
+.bearImg {
+    flex-basis: 15%;
+    height: 100%;
+}
+
+h1 {
+    margin-right: 20px;
+}
+
+nav {
+    margin-top: 10px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+nav ul li {
+    flex: 1;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul li:first-child a {
+    background-color: grey;
+    color: white;
+}
+
+.fishContainer {
+    display: flex;
+    flex-wrap: wrap; 
+    height: 65vh;
+}
+
+.fishList {
+    flex: 0 0 30%;
+    margin-right: 20px;
+    margin-left: 20px;
+    list-style-type: circle;
+}
+
+.fishList h2 {
+    margin-left: 80px;
+}
+
+.fishList li {
+    margin-bottom: 10px;
+    padding-left: 150px;
+}
+
+.fishFlex {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.flexItem {
+    flex: 1 0 30%;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.fish {
+    width: 300px;
+    height: 200px;
+}
+
+/* 
+Could also use pseudo-classes instead of adding fish1, fish2, fish3 classes,
+but that might make the code more confusing 
+*/
+.fish1:hover {
+    transform: rotate(20deg);
+}
+
+.fish2 {
+    transition: .5s ease-in-out;
+}
+
+.fish2:hover {
+    transform: scale(1.5, 2)
+}
+
+.fish3:hover {
+    transform: skew(20deg, 20deg);
+}
+
+.flexItem img {
+    flex-shrink: 0;
+}
+
+.flexItem p {
+    margin-left: 40px;
+}
+
+footer {
+    height: 10vh;
+    background-image: url("https://stuartfamilydental.com/wp-content/uploads/2018/02/insurance-footer-background.png");
+    background-size: cover;
+    background-position: center;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+footer h3 {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*Translates up and left by 50% of its own height and width to center horizontally and vertically*/
+    transform: translate(-50%, -100%); 
+}
