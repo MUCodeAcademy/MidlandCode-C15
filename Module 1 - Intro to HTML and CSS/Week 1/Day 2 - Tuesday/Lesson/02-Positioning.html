@@ -37,15 +37,25 @@
             - if no positioned ancestors exist, it uses the document body and moves along with the page scrolling
         
         */
-        div{
+        #superImportant {
+            position: absolute;
+        }
+        div {
             background-color: orange;
             width: 400px;
-            height: 400px;
+            height: 200px;
         }
         .static{
             position: static;
-            margin-bottom: 600px;
+            margin-bottom: 6px;
             background-color: blueviolet;
+            position: absolute;
+        }
+        .parent{
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            margin-top: 100px;
         }
         .relative{
             position:relative;
@@ -58,16 +68,12 @@
             left: 100px;
             background-color: blue;
         }
-        .fixed{
+        .fixed {
             position: fixed;
             width: 25%;
             height: 50px;
+            bottom: 100px;
             background-color: red;
-        }
-        .parent{
-            top: 100px;
-            left: 50%;
-            margin-top: 100px;
         }
         .relative.child{
             height: 300px;
@@ -79,7 +85,7 @@
     </style>
 </head>
     <body>
-        <div class="relative parent">
+        <div id="superImportant" class="relative parent">
             Relative Parent
             <div class="relative child">
                 Relative Child
@@ -89,6 +95,7 @@
         <div class="absolute">Absolute</div>
         <div class="fixed">Fixed</div>
         <div class="static">Static</div>
+        <div>Normal</div>
 
 
     </body>

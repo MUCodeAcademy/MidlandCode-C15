@@ -35,14 +35,14 @@ Let's take the following CSS code for some simple styling. Assuming this is the 
         color: white;
         text-align: right;
     }
-    .second-class{
+    .second-Class{
         color: black;
         text-align: right;
     }
-    .third-class{
+    .third-Class{
         color: black;
     }
-    .fourth-class{
+    .fourth-Class{
         background-color: red;
         text-align: center;
     }
