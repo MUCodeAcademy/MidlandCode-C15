@@ -101,4 +101,4 @@ The above is the minimum you should accomplish for this project. It seems like a
 
 If you happen to reach the end before others, feel free to add more functionality or offer assistance to your classmates.
 
-Due date: May 6, 5:30 pm
+Due date: November 18th, 5:30 pm
