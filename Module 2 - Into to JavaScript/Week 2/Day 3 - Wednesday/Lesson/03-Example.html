@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+        margin: 2px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Let's see what happens when we add an element with JavaScript</h2>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+      document.querySelectorAll("div").forEach(function (div) {
+        div.addEventListener("click", changeToRed);
+      });
+
+      let newDiv = document.createElement("div");
+      newDiv.addEventListener("click", changeToRed);
+      document.querySelector("body").append(newDiv);
+
+      function changeToRed() {
+        let divs = document.querySelectorAll("div");
+        for (let i = 0; i < divs.length; i++) {
+          divs[i].style.backgroundColor = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

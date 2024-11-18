@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>APIs and You!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1 style="text-align: center">Api Requests</h1>
+    <button id="get">Get Promise Chain</button>
+    <button id="getAsyncAwait">Get Async/Await</button>
+    <button id="post">Post Promise Chain</button>
+    <button id="postAsyncAwait">Post Async/Await</button>
+    <script>
+      // There are a lot of different ways to write axios/fetch requests, but here are some examples
+      document.getElementById("get").addEventListener("click", () => {
+        axios.get("https://jsonplaceholder.typicode.com/posts/1")
+          .then((response) => {
+            // handle success
+            console.log(response);
+            return response.data;
+          })
+          .catch((error) => {
+            // handle error
+            console.log(error);
+          })
+          .then((data) => {
+            // always executed
+            console.log(data);
+          });
+      });
+
+      // Async Await Pattern
+      document
+        .getElementById("getAsyncAwait")
+        .addEventListener("click", async () => {
+          try {
+            const response = await axios.get(
+              "https://jsonplaceholder.typicode.com/posts/1"
+            );
+            console.log("Full response: ", response, response.data);
+            console.log("Data:", response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        });
+
+      document.getElementById("post").addEventListener("click", () => {
+        let me = { first: "John", last: "Smith" };
+        axios.post("https://jsonplaceholder.typicode.com/posts/", me)
+          .then((response) => {
+            // handle success
+            console.log(response);
+            return response.data;
+          })
+          .catch((error) => {
+            // handle error
+            console.log(error);
+          })
+          .then((data) => {
+            // always executed
+            console.log(data);
+          });
+      });
+
+      // Async Await Pattern
+      document
+        .getElementById("postAsyncAwait")
+        .addEventListener("click", async () => {
+          let me = { first: "John", last: "Smith" };
+          try {
+            const response = await axios.post(
+              "https://jsonplaceholder.typicode.com/posts/",
+              me
+            );
+            console.log("Full response: ", response, response.data);
+            console.log("Data:", response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        });
+    </script>
+  </body>
+</html>

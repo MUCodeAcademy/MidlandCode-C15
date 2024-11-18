@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Planning: Not just for weddings.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .circle,
+        .square {
+            margin: 10px auto;
+            background-color: orange;
+            width: 150px;
+            height: 150px;
+        }
+
+        .circle {
+            border-radius: 50%;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .square {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            padding: 55px 0px;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+        }
+
+        button,
+        input,
+        .message {
+            text-align: center;
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="perilButton">Click me at your own peril!</button>
+    <input id="favFoodInput" type="text" placeholder="Favorite Food">
+    <div class="message"><span id=favFood></span> is your favorite food.</div>
+    <div class="circle" id="circleDiv">Come here!</div>
+    <div class="square" id="squareDiv">Use the arrow keys to move me around!</div>
+
+    <script>
+        document.getElementById('perilButton').addEventListener('click', function () {
+            alert('Boo!');
+        });
+
+        let input = document.getElementById('favFoodInput');
+
+        input.addEventListener('keyup', () => {
+            let inputValue = input.value;
+            document.getElementById('favFood').innerText = inputValue;
+        })
+        
+        const leaveCircle = (e) => e.target.innerText = "Come back!";
+
+        document.getElementById('circleDiv').addEventListener('mouseleave', leaveCircle);
+
+        document.getElementById('circleDiv').addEventListener('mouseenter', e => {
+            //This shows what e is:
+            console.log(e);
+            e.target.innerText = "Hello!";
+        });
+        let body = document.querySelector('body')
+        body.addEventListener('keydown', e => {
+//          Arrow keys: left   up  right  down
+            let codes = [37,   38,   39,   40];
+            if (codes.includes(e.keyCode)) {
+                e.preventDefault();
+                // If the event does not get explicitly handled,
+                // its default action should not be taken as it normally would be.
+                // Default actions of the arrows keys includes scrolling the page up/down or left/right.
+            }                                                                    
+            function moveSquare(attr, val) {
+                let squareDiv = document.getElementById('squareDiv');
+                let posValue = parseInt(squareDiv.style[attr]);
+                console.log(parseInt(squareDiv.style[attr]));
+                squareDiv.style[attr] = Number.isNaN(posValue) ? `${val}px` : `${val + posValue}px`;
+                // parseInt and Number essentially do the same thing, however
+                // Number will convert any data type into a number
+                // parseInt will only convert strings to integers
+            }
+
+            if (e.keyCode === 38) {
+                moveSquare('top', -50);
+            }
+            else if (e.keyCode === 40) {
+                moveSquare('top', 50);
+            }
+            else if (e.keyCode === 37) {
+                moveSquare('left', -50);
+            }
+            else if (e.keyCode === 39) {
+                moveSquare('left', 50);
+            }
+        });
+    </script>
+</body>
+
+</html>

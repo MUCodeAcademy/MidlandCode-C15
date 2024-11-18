@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+
+    <script>
+      // A function is a set of statements that perform a certain task.
+
+      /* 
+        General Overview:
+
+            function thisIsAFunction(parameter1, parameter2)
+            {
+                write your code to do something;
+                return some value you want the function to give you;
+            }
+
+            thisIsAFunction(argument1, argument2);
+
+            */
+
+      //Basic function example
+      let number1 = 1;
+      let number2 = 2;
+
+      function addition(firstNumber, secondNumber) {
+        let result = firstNumber + secondNumber;
+        return result;
+      }
+
+      addition(number1, number2);
+      let output = addition(number1, number2);
+      console.log(`output is ${output}`);
+      console.log(addition(number1, number2));
+
+      function greeting(name, age, country) {
+        if (age > 50) {
+          console.log(`Greetings ${name}`);
+        } else {
+          console.log(`What's up ${name}?`);
+        }
+        console.log(
+          " How long has it been since you've been back home to " +
+            country +
+            "?"
+        );
+      }
+      let myName = "Justin";
+      //Calling a function
+      greeting(myName, 24, "United States");
+
+      //Calling a function with incorrect number of arguments.
+      greeting("Justin", 400);
+
+      // Different types of scope:
+
+      // Global: variable, function, or object defined outside of any function or object; 
+      //         can be accessed anywhere in the code.
+
+      // Local: variable, function, or object defined inside a function or object; 
+      //        can only be accessed within the function or object.
+
+      let variableOne = "First Variable"; // This has global scope; can be accessed anywhere
+      function showingScope() {
+        let variableTwo = "Second Variable"; // This only exists within this function (local scope)
+        console.log(variableOne, variableTwo);
+      }
+      showingScope();
+      // This console log below will give a reference error
+      // console.log(variableTwo);
+
+      // You should only have one return per function, because it will never run the second one. 
+      function returningValues(a, b) {
+        return a + b;
+        return a - b; // Will never execute, and a lot IDEs will warn you of that.
+      }
+
+      console.log("Computing Values: ", returningValues(1, 2));
+      console.log("----------------------------------");
+
+      function returningConditionalValues(a, b) {
+        if (a >= b) {
+          return a;
+        }
+        return b;
+
+        // This is called a ternary operator. It is functionally the same as the one code above
+        return a >= b ? a : b;
+      }
+
+      // Recursion
+      // As a concept, this is very important, BUT the implementation is not as common in web development.
+      // Additionally, it's very easy to create an infinite loop with recursion.
+
+      function countDown(fromNumber) {
+        console.log(fromNumber);
+
+        let nextNumber = fromNumber - 1; // 3 - 1, then 2 - 1, then 1 - 1, then stops
+
+        if (nextNumber > 0) {
+            countDown(nextNumber);
+        }
+      }
+
+      countDown(3);
+
+      // Arrow functions:
+      // While we used the function keyword above, we can also use const and then an arrow function.
+      // Arrow functions will be used commonly moving forward, especially when we start covering React.
+      // Get used to arrow functions now and use them whenever you can.
+
+      // Without arrow functions
+
+      function addTwoNonArrow(x, y) {
+        return x + y;
+      }
+
+      // With arrow function
+
+      const addTwoWithArrow = (x, y) => x + y; // this has implicit return (you don't need the 'return' keyword if it's one line)
+
+      // With more than one line and / or no return value
+      const arrowMultiLine = (x, y) => {
+        // if you want to return a value from the function, and it's multiple lines, you HAVE to use the return keyword
+        output = x + y;
+        return output;
+      };
+
+      arrowMultiLine(2, 4);
+    </script>
+  </head>
+
+  <body></body>
+</html>

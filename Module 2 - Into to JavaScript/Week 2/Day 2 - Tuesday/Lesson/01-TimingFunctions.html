@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body
+    style="background-color: blue; transition: background-color 250ms ease-in"
+  >
+    <h1 style="text-align: center">
+      Every 2 seconds the background color will change
+    </h1>
+    <h2
+      id="disappear"
+      style="text-align: center; transition: opacity 500ms linear"
+    >
+      In <span id="timeLeft">10</span> seconds, this text will fade away...
+    </h2>
+    <script>
+      // Anonymous functions (functions without a name):
+
+      // const add = function() {}
+      // function() {}
+      // () => {}
+      
+      // Often used when you need to define a function that's only used once OR
+      // if it's used as a callback function (functions passed as arguments to other functions)
+      
+      // Pattern for setInterval (does something repeatedly after the delay time)
+      let intervalRef = setInterval(() => {
+        // What to do repeatedly after the interval time
+      }, 1000); // Time in miliseconds
+
+      // setTimeout (does something once after the timer completes)
+      setTimeout(() => {
+        // What to do after the interval time
+      }, 1000); // Time in miliseconds
+
+      // To stop the interval
+      clearInterval(intervalRef);
+
+      setTimeout(() => {
+        let fadeAway = document.getElementById("disappear");
+        fadeAway.style.opacity = 0;
+        // clearInterval(counter);
+      }, 10000); // in miliseconds (10000 ms is 10 seconds)
+      
+      let timer = 9;
+      let counter = setInterval(() => {
+        document.getElementById("timeLeft").innerText = timer;
+        timer--;
+      }, 1000); // every second
+
+      setInterval(() => {
+        const randomColor = () => Math.floor(Math.random() * 256);
+
+        let body = document.getElementsByTagName("body")[0];
+        body.style.backgroundColor = 
+        `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>What is the DOM?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      div {
+        width: 90%;
+        margin: 10px auto;
+        background-color: orange;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+      }
+
+      .sub-div {
+        height: 10px;
+        width: 10px;
+        background-color: grey;
+      }
+    </style>
+    <script>
+      console.log(document.querySelectorAll(".some-div"));
+    </script>
+  </head>
+
+  <body>
+    <div class="some-div">This is a div!</div>
+    <div class="some-div">This is also a div!</div>
+    <div class="some-div a b c d e f g h" id="divID1">This is a third div!</div>
+    <div class="some-div another-div">
+      <input type="text" value="example text" name="someInput" />
+    </div>
+
+    <button onclick="changeColors()">Change Colors!</button>
+
+    <script>
+      "use strict";
+      console.log("The DOM:", document);
+
+      // document.querySelector(CSS SELECTOR)
+      // Selects first node only
+      console.log("Query Selector:", document.querySelector(".some-div")); // returns one element
+      // let divs = document.querySelectorAll('.some-div');
+      // console.log(divs[2]);
+
+      //document.querySelectorAll(CSS SELECTOR)
+      //Selects all elements and returns nodes as array.
+      //Can Use [0], [1], [2] etc for ease of accessibility.
+      console.log(
+        "Query Selector All:",
+        document.querySelectorAll(".some-div")
+      ); // returns array
+      console.log(
+        "Query Selector with :not",
+        document.querySelectorAll(".some-div:not(.another-div)")
+      ); // returns array
+
+      //document.getElement(s)By return Elements
+
+      //document.getElementsByClassName
+      console.log(document.getElementsByClassName("some-div")); // returns array of elements
+
+      //document.getElementsByTagName
+      console.log(document.getElementsByTagName("meta")); // returns array of elements
+
+      //document.getElementsByName
+      console.log(document.getElementsByName("someInput")); // returns array of elements
+
+      //document.getElementById
+      console.log(document.getElementById("divID1")); // returns the element itself
+
+      //So What can we do now? Let's take a look!
+
+      function changeColors() {
+        function randomColor() {
+          // This will generate a random number between 0 255
+          Math.floor(Math.random() * 256);
+        }
+
+        // divs = [element1, element2, element3]
+        let divs = document.getElementsByClassName("some-div");
+        for (let i = 0; i < divs.length; i++) {
+          divs[i].style.backgroundColor = 
+          `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+          // rgb(156, 28, 74)
+        }
+      }
+    </script>
+  </body>
+</html>
