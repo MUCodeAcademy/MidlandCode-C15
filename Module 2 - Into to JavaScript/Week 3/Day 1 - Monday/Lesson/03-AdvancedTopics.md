@@ -43,6 +43,18 @@ Similarly to the above, you can strip out (without editing the object itself) th
 const me = { first: "Justin", last: "Luce", age: 24 };
 
 const { first, age } = me;
+const { first: variableThatsDifferent, age: notCalledAge_butStillHasTheValueOfAge } = me;
+
+// You'll see this all the time in React
+const myFunction = ({ keyName1, keyName2 }) => {
+
+}
+const objectArgument = {
+    keyName1: "name",
+    keyName2: "name2",
+}
+myFunction(objectArgument);
+myFunction({ keyName1: "name", keyName2: "name2" }) 
 ```
 
 By running that code, it will create a variable named `first` that is equal to `me.first` and the same concept for the variable `age`. Similarly to the array destructuring, any future edits to `me.first` will not change the `first` variable and vice versa.
@@ -53,7 +65,10 @@ Let's say you have a function that can take in two arguments and only two. Well,
 
 ```javascript
 // It's important to note that the third variable doesn't have to be called rest, but the three dots are required.
-const functionName = (paramA, paramB, ...rest) => {};
+const functionName = (...rest) => {
+    console.log('length', rest.length);
+    console.log('is an array', Array.isArray(rest));
+};
 ```
 
 With the above, if you called the function with:
@@ -84,4 +99,18 @@ const myModule = (function() {
 }());
 
 myModule.publicMethod(); // outputs 'Hello World'
+```
+
+```javascript
+// file.js
+export default function myFunction() {
+    // This function does things when imported
+}
+export const testExport "This is a test";
+```
+
+```javascript
+import fun, { testExport } from './file.js'
+import fun, { testExport: anotherNameForTestExport } from './file.js'
+// fun will be the same function as was declared in file.js myFunction
 ```
