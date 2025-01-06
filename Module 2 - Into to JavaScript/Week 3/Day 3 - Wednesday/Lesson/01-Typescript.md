@@ -31,6 +31,6 @@ You can separate out your TS code quite nicely via importing and exporting thing
 
 There is a lot more to learn about TS and we will be using it extensively with React so you'll have plenty of time to learn but in the meantime:
 
-- [Basic TS Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [Classes](https://www.typescriptlang.org/docs/handbook/classes.html)
+- [Basic TS Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+- [Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)
 - [Modules](https://www.typescriptlang.org/docs/handbook/modules.html)

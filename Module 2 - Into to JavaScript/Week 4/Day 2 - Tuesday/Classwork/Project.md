@@ -4,7 +4,8 @@ You will be working on several projects today and over the next week depending o
 
 Once you complete the project, send the Github link to the repository on Slack, so I can start writing code reviews.
 
-This is due Monday, June 10.
+This is due January 6th, a Monday, the beginning of the React module
+I would like to have most of our conversations and code reviews out of the way before then.
 
 ## First Option - Building a Calculator
 
@@ -34,7 +35,7 @@ This can be done solo or with a partner as you prefer. For those of you unfamili
   - An area for your cards face up in front of you
   - An area for the computer's cards opposite the player's
 - Using javascript, create a deck of cards, shuffle them and then begin dealing from the top starting with the computer.
-- If the computer or user are dealt 21 with their first two cards (and Ace and a Face Card), end the game with the appropriate player winning.
+- If the computer or user are dealt 21 with their first two cards (an Ace and a Face Card), end the game with the appropriate player winning.
 - Allow for the player to select one of the following options:
   - No new cards - The player doesn't want any more cards
   - New Card - The player is then dealt the top card. if this brings them over 21 they lose immediately
