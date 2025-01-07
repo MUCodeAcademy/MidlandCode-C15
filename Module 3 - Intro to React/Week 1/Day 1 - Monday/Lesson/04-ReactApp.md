@@ -1,19 +1,29 @@
 # Creating a React App
 
 The legacy command to create a React application is:
+```javascript
+npx create-react-app
+```
 It's very quickly being replaced by alternatives. One such alternative is the one I've personally fallen in love with, and the one we'll be using for this class: vite
 
-`npx create-react-app project-name`
+```javascript
+npx create vite@latest
+```
 
 This will create a React application with some starter code, and put it into a folder called project-name (you can name it whatever you want).
 
 You will then have to go into the folder in the terminal with the 'cd' command:
 
-`cd project-name`
+```javascript
+cd project-name
+```
 
-Now you can the app with this command:
+Now you can start the app with this command:
 
-`npm start`
+```javascript
+npm run dev
+```
+As a side note, your `package.json` file will have a "scripts" section. Each key in that object is a runnable command when you type `npm run <CommandName>`
 
 # React with TypeScript
 
