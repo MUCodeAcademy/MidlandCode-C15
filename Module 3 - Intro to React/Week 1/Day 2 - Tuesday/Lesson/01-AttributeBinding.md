@@ -11,8 +11,8 @@ When you bind values in React you do so with the `{}` that we briefly mentioned 
 ```
 
 ```js
-let name = "Justin";
-let nameDiv = document.getElementById("name");
+const name = "Tanner";
+const nameDiv = document.getElementById("name");
 nameDiv.innerText = `${nameDiv.innerText} ${name}`;
 ```
 
