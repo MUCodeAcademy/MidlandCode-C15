@@ -7,7 +7,7 @@ One of the nice things about react is that any tools you can use in raw JavaScri
 3. Custom Hook
 4. Library
 
-Number one is not recommended due to the lack of reusability and scalability, so we will not be covering that, but in essence it is no different that using a standard fetch or axios call in the component's logic. We will also not be talking about third party libraries (not including axios) as there are too any options to cover easily. We will be talking about how to use centralized functions, custom hooks, and taking advantage of the `useEffect` hook to make your calls easier, cleaner, and more reusable.
+Number one is not recommended due to the lack of reusability and scalability, so we will not be covering that, but in essence it is no different than using a standard fetch or axios call in the component's logic. We will also not be talking about third party libraries (not including axios) as there are too any options to cover easily. We will be talking about how to use centralized functions, custom hooks, and taking advantage of the `useEffect` hook to make your calls easier, cleaner, and more reusable.
 
 ## Services (Centralized Functions)
 

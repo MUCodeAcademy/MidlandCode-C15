@@ -85,7 +85,8 @@ const [val2, setVal2] = useState(2);
 
 const logAdd = (a, b) => console.log(a + b);
 
-const memoizedWithDeps = useCallback(() => logAdd(val1, val2), [val1, val2]);
+cosnt unMemoizedFunction = () => logAdd(val1, val2)
+const memoizedWithDeps = useCallback(unMemoizedFunction, [val1, val2]);
 ```
 
 This might seem confusing and it kind of is, but the main thing to think about is that you probably won't need this pattern unless you KNOW you need it.
