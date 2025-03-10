@@ -13,6 +13,6 @@ If you're using both your SPA and backend at the same time, you're usually best 
 "proxy": "http://localhost:SERVER_PORT"
 ```
 
-The above allows for it proxy any requests from port 3000 (where React runs) to your backend.
+The above allows for it to proxy any requests from port 3000 (where React runs) to your backend.
 
 2. Set up any backend bundling or nodemon style code to ignore any changes to the `src` folder to prevent the server from restarting unnecessarily.
